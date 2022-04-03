@@ -31,9 +31,11 @@ const Masked = () => {
   const forEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const forDirec=/^([a-zA-Zá-ÿ0-9]+([ ]?[.]?[-]?[a-zA-Zá-ÿ0-9]+)*)/
   const forCodigoM=/^[1-9][0-9]{1,3}$/;
-  const forTelf= /^([1-9]+[0-9]{3}.*-?([0-9]{4}?))$/;
-  const forDpi=/^([0-9]{4}.*?-([0-9]{5}.*?-([0-9]{4}.*)))$/;
-  const forPasap=/^([0-9]{4}.*?-([0-9]{5}?))$/;
+  const forTelf= /^([1-9]+[0-9]{3}-?([0-9]{4}))$/;
+  //const forTelf= /^([1-9]+[0-9]{3}.*-?([0-9]{4}?))$/;
+  const forDpi=/^([0-9]{4}-([0-9]{5}-([0-9]{4})))$/;
+  const forPasap=/^([0-9]{4}-([0-9]{5}))$/;
+  //const forPasap=/^([0-9]{4}.*?-([0-9]{5}?))$/;
   const forTarjeta=/\b\d{4}[ -]?\d{4}[ -]?\d{4}[ -]?\d{4}\b$/;
   const forCVC=/^[0-9]{3,4}$/
   const handleChange=(event)=>{
@@ -228,7 +230,7 @@ const Masked = () => {
                 <input type="text" value={datos.tarjeta[0]} onChange={handleChange} placeholder="Ejem. 1234-1234-1234-1234" className="form-control align-self-center p-2" id="tarjeta"/>
             </div>
             <div className="col-12 col-md-4 d-flex">
-                <label className="col-4 form-label align-self-center">Fecha de vencimiento</label>
+                <label className="col-5 form-label align-self-center">Fecha de vencimiento</label>
                 <input type="month" value={datos.vencim[0]} min="2020-01" onChange={handleChange} className="form-control align-self-center p-2" id="vencim"/>
             </div>
             <div className="col-12 col-md-4 d-flex">
